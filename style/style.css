@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-group{ margin: 20px 0; }
+input{ height: 30px; width: 100%; padding: 5px; }
+button{ 
+    background: #ce0033; 
+    color: #fff; 
+    padding: 10px; 
+    border: solid 1px #ce0033;
+    cursor: pointer;
+    border-radius:5px;
+}
+
+html{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background: #f7f5ff;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+header{
+    background:#ce0033;
+    color: #fff;    
+}
+
+header #row{
+    height: 50px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #jumbotron{
+    height: 100px;
+    background:ce0033;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main{
+    flex: 1;
+    margin: 20px 5px;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    main #products{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
