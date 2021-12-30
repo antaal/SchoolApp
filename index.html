@@ -27,53 +27,33 @@
             <h1>ScoolApp</h1>
         </div>
     </header><br>   
-    <body>
-        <div class="container">
-            <div class="row mb-2">
-                <div class="col">
-                    <form action="index.html" method="post" >
-                        <div class="mb-3">
-                            
-                        <input
-                        type="text"
-                        class="form-control"
-                        id="prenom"
-                        name="prenom"
-                        placeholder="Prénom"
-                        /><br />
-                        <input
-                        type="text"
-                        class="form-control"
-                        id="nom"
-                        name="nom"
-                        placeholder="Nom"
-                        />
+<body>
+    <div class="container">
+    <div class="row mb-2">
+    <div class="col">
+        <form action="index.html" method="post" >
+            <div class="mb-3">
+                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom"/><br />
+                <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom"/>
                        <br />
-                        <label for="form-select" placeholder="niveau">Niveau</label>
-                        <select class="form-select" aria-label="Default select example" id="niveau"name="niveau" >
+                <label for="form-select" placeholder="niveau">Niveau</label>
+                <select class="form-select" aria-label="Default select example" id="niveau"name="niveau" >
                         <option selected>-----</option>
                         <option value="1">Faible</option>
                         <option value="2">Intermédiaire</option>
                         <option value="3">Avancé</option>
-                        </select>
-                        </div>
-                        <div class="mb-3">
-                        <label for="suggestion" class="form-label"
-                        >Bio</label
-                        >
-                        <textarea
-                        class="form-control"
-                        id="bio"
-                        name="bio"
-                        rows="3"
-                        ></textarea>
-                        </div><br>
-                        <div class="d-grid gap-2 col-4 mx-auto">
-                        <button class="btn btn-danger"id="btnAjout" type="submit">Ajouter</button>
-                        </div>
-                        </form>
-                        
+                </select>
                 </div>
+                <div class="mb-3">
+                <label for="suggestion" class="form-label">Bio</label>
+                <textarea class="form-control" id="bio" name="bio" rows="3" ></textarea>
+                </div><br>
+                <div class="d-grid gap-2 col-4 mx-auto">
+                <button class="btn btn-danger"id="btnAjout" type="submit">Ajouter</button>
+                </div>
+        </form>
+                        
+        </div>
             <!--<i class="fas fa-trash-alt"></i>
          <i class="fas fa-edit"></i>-->
             
@@ -97,5 +77,5 @@
     </div>
         
     </body>
-    <script src="./src/app.js" defer></script>
+    <script src="./dist/app.js" defer></script>
 </html>

@@ -1,6 +1,8 @@
 const API_KEY =
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MDA4NDQ3OCwiZXhwIjoxOTU1NjYwNDc4fQ.EpAcIjyyxGlxQBERz0kL3sqqCE1SgMrwSyXmsP8LccU"
 const API_URL = "https://plkjtdwhwxsklfxblqad.supabase.co/rest/v1/VanillaApp"
+
+/*
 const signUp = e => {
     let prenom = document.getElementById('prenom').value,
         nom = document.getElementById('nom').value,
@@ -27,7 +29,7 @@ const signUp = e => {
     }
   
 }
-   /////////////////////////////////////////////////// 
+*/
 
 // RECUPERATION DES INFORMAIONS DU FORMULAIRE
 const SecondForm = document.getElementById("form2")
@@ -42,7 +44,7 @@ const Valider = document.getElementById("valider")
 
 Valider.addEventListener("click", (event) => {
   event.preventDefault()
-
+console.log("valider");
 
   // Récupération des informations saisies
   const prenomSaisi = inputPrenom.value
@@ -73,10 +75,7 @@ Valider.addEventListener("click", (event) => {
     body: JSON.stringify(nouvelleIdee),
   })
   .then((response) => response.json())
-    
-   
-      
-    
+
        // on vide les champs
        inputPrenom.value = ""
        inputNom.value = ""
@@ -90,8 +89,8 @@ Valider.addEventListener("click", (event) => {
 
 
 const creerUneCarte = (idee) => {
-  const idButtonValider ="btn_valider-" +idee.id
-  const idButtonRefuser ="btn_refuser-" +idee.id
+  const idButtonModifier ="btn_modifier-" +idee.id
+  const idButtonSupprimer ="btn_supprimer-" +idee.id
     const idCardIdee= "numero_card" +idee.id
      
     
@@ -106,22 +105,12 @@ const creerUneCarte = (idee) => {
            <h5 class="card-title">${inputPrenom.value} ${inputNom.value}</h5>
            <p class="card-text">${inputOption.value}</p>
            <p class="card-text">${inputBio.value}</p>
-
-         </div>
-         <div class ="d-flex justify-content-between">
-         <i class="fas fa-trash-alt"
-      id="${idButtonValider}"  
-      style="font-size:2rem">
-      
-      </i>
-
-      <i class="fas fa-edit
-      id="${idButtonRefuser}"  
-      style="font-size:2rem; color:#ce0033">
-      </i>
-      </div>
-         
-       </div>
+          </div>
+    <div class ="d-flex ">
+      <i class="fas fa-trash-alt mx-3 card-link btn"id="${idButtonModifier}"style="font-size:3rem"></i>
+      <i class="fas fa-edit mx-3 card-link btn"id="${idButtonSupprimer}"style="font-size:3rem; color:#ce0033"></i>
+    </div>
+    </div>
      </div><br>`
      )
    
@@ -143,13 +132,9 @@ const creerUneCarte = (idee) => {
         niveau:optionSaisi,
         bio: bioSaisi,
         
-                           }
+        }
       
       creerUneCarte(Apprenant);
-   
-      
-
-
  
-      
    })
+    
