@@ -63,3 +63,13 @@ main{
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+const retour = document.getElementById(retour)
+retour.addEventListener("click", (event) =>{
+  console.log("hello");
+  event.preventDefault();
+  window.location.href="index.html"
+
+  
+  
+})

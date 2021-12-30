@@ -45,7 +45,7 @@ const Valider = document.getElementById("valider")
 Valider.addEventListener("click", (event) => {
   event.preventDefault()
 console.log("valider");
-
+window.location.href="liste.html"
   // Récupération des informations saisies
   const prenomSaisi = inputPrenom.value
   const nomSaisi = inputNom.value
