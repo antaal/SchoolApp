@@ -67,5 +67,13 @@ const Form4 = document.querySelector(".details")
 
  
 }
+const retour = document.getElementById(retour)
+retour.addEventListener("click", (event) =>{
+  console.log("hello");
+  event.preventDefault();
+  window.location.href="index.html"
 
+  
+  
+})
 
