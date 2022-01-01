@@ -42,15 +42,15 @@ const ThirdForm = document.querySelector(".liste")
       </div>`
   )
 
-  const detail = document.getElementById(idButtonDetail)
-    detail.addEventListener("click", (event) =>{
-      console.log("hello");
-      event.preventDefault();
-      window.location.href="detail.html"
+  // const detail = document.getElementById(idButtonDetail)
+  //   detail.addEventListener("click", (event) =>{
+  //     console.log("hello");
+  //     event.preventDefault();
+  //     window.location.href="detail.html"
 
       
       
-    })
+  //   })
 }
 
 
