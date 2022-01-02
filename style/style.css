@@ -41,7 +41,7 @@ header #row{
 }
 
 header #jumbotron{
-    height: 100px;
+    height: 150px;
     background:ce0033;
     color: white;
     display: grid;

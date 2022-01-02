@@ -25,6 +25,8 @@ function creerUneCarte(idee){
 
 const Form4 = document.querySelector(".details")
   const idCardIdee= "numero_card" +idee.id
+
+
   
  Form4.insertAdjacentHTML(
       "afterbegin",
@@ -65,15 +67,8 @@ const Form4 = document.querySelector(".details")
       `
   )
 
- 
-}
-const retour = document.getElementById(retour)
-retour.addEventListener("click", (event) =>{
-  console.log("hello");
-  event.preventDefault();
-  window.location.href="index.html"
 
-  
-  
-})
+}
+
+
 
