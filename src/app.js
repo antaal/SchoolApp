@@ -1,6 +1,7 @@
 const API_KEY =
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MDA4NDQ3OCwiZXhwIjoxOTU1NjYwNDc4fQ.EpAcIjyyxGlxQBERz0kL3sqqCE1SgMrwSyXmsP8LccU"
-const API_URL = "https://plkjtdwhwxsklfxblqad.supabase.co/rest/v1/VanillaApp"
+const API_URL = "https://plkjtdwhwxsklfxblqad.supabase.co/rest/v1/Apprenants"
+
 
 /*
 const signUp = e => {
@@ -110,19 +111,33 @@ const creerUneCarte = (idee) => {
            <p class="card-text">${inputBio.value}</p>
           </div>
     <div class ="d-flex ">
-      <i class="fas fa-trash-alt mx-3 card-link btn"id="${idButtonModifier}"style="font-size:3rem"></i>
-      <i class="fas fa-edit mx-3 card-link btn"id="${idButtonSupprimer}"style="font-size:3rem; color:#ce0033"></i>
+      <i class="fas fa-trash-alt mx-3 card-link btn"id="${idButtonSupprimer}"style="font-size:3rem"></i>
+      <i class="fas fa-edit mx-3 card-link btn"id="${idButtonModifier}"style="font-size:3rem; color:#ce0033"></i>
     </div>
     </div>
      </div><br>`
      )
-   
+   const Clear =document.getElementById(idButtonSupprimer)
+   console.log("Supprime");
+  Clear.addEventListener("click", (e) => {
+     alert("je Supprime")
+   })
+   const Modify =document.getElementById(idButtonModifier)
+   console.log("Modifie");
+  Modify.addEventListener("click", (e) => {
+     alert("je Modifie")
+   })
+
    }
 
    
+
    BtnAdd.addEventListener("click", (e) => {
        e.preventDefault();
       
+       if (inputPrenom.value == "" || inputNom.value == "" || inputOption.value == "" || inputBio.value =="" ) {
+        return alert("Veuillez remplir tous les champs !!!")
+      }
       const prenomSaisi = inputPrenom.value
         const nomSaisi = inputNom.value
         const optionSaisi = inputOption.value
