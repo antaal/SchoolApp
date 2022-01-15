@@ -33,6 +33,8 @@ const signUp = e => {
 */
 
 // RECUPERATION DES INFORMAIONS DU FORMULAIRE
+const Tab = [];
+console.log(Tab);
 const SecondForm = document.getElementById("form2")
 const ideeForm = document.querySelector("form")
 const inputPrenom = document.querySelector("input#prenom")
@@ -64,6 +66,7 @@ console.log("valider");
     bio: bioSaisi,
     
   }
+ 
   
 
   //ENVOYER LES DONNEES VERS SUPABASE
@@ -117,18 +120,56 @@ const creerUneCarte = (idee) => {
     </div>
      </div><br>`
      )
-   const Clear =document.getElementById(idButtonSupprimer)
-   console.log("Supprime");
-  Clear.addEventListener("click", (e) => {
-     alert("je Supprime")
-   })
-   const Modify =document.getElementById(idButtonModifier)
-   console.log("Modifie");
-  Modify.addEventListener("click", (e) => {
-     alert("je Modifie")
-   })
 
-   }
+
+const Modify =document.getElementById(idButtonModifier)
+
+    Modify.addEventListener("click",(e)=>{
+      console.log("je modifie");
+      e.preventDefault()
+   
+      Tab.forEach(Apprenant => {
+          if(Apprenant.id==idButtonModifier){
+     alert("on veux modifier")
+              inputNom.value=Apprenant.nom
+              inputPrenom.value=Apprenant.prenom
+              inputOption.value=Apprenant.niveau
+              inputBio.value=Apprenant.bio
+              BtnAdd.textContent="modifier"
+              let index=Tab.indexOf(creerUneCarte)
+              console.log(index);
+              Tab.splice(index,1)
+   
+              SecondForm.appendChild(creerUneCarte).remove(creerUneCarte)
+              console.log(Tab);
+          }
+      });
+    })
+
+
+const Clear =document.getElementById(idButtonSupprimer)
+
+Clear.addEventListener("click", (e) => {
+  console.log("Supprime");
+let index=Tab.indexOf(idee)
+  console.log(index);
+  Tab.splice(index,1)
+  console.log(Tab);
+  SecondForm.appendChild(Apprenant).remove(creerUneCarte)
+  // création de nos ids
+console.log(Tab);
+// const inputPrenom = document.querySelector("input#prenom")
+// const inputNom = document.querySelector("input#nom")
+// const inputOption = document.querySelector("select#niveau")
+// const inputBio = document.querySelector("textarea#bio")
+
+//     //Set Value
+//     inputPrenom.value = '';
+//     inputNom.value = '';
+//    inputOption.value = '';
+//   inputBio.value = '';
+})
+ }
 
    
 
@@ -145,14 +186,19 @@ const creerUneCarte = (idee) => {
        
        
         const Apprenant = {
+          id:Date.now,
         prenom:prenomSaisi,
         nom:nomSaisi,
         niveau:optionSaisi,
         bio: bioSaisi,
         
         }
+        console.log(Apprenant);
+        Tab.push(Apprenant);
       
       creerUneCarte(Apprenant);
+      console.log(Tab);
+
       
  
    })
